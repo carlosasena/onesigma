@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug FastAPI",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["onesigma.main:app", "--reload"],
+      "jinja": true
+    },
+    {
+      "name": "Debug Tests (pytest)",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-v"]
+    },
+    {
+      "name": "Debug Celery Worker",
+      "type": "python",
+      "request": "launch",
+      "module": "celery",
+      "args": ["-A", "onesigma.worker", "worker", "-l", "info"]
+    }
+  ]
+}

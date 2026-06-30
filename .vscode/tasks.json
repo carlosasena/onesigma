@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Server",
+      "type": "shell",
+      "command": "poetry run uvicorn onesigma.main:app --reload",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "poetry run pytest -v",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Migrations",
+      "type": "shell",
+      "command": "poetry run alembic upgrade head",
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Celery Worker",
+      "type": "shell",
+      "command": "poetry run celery -A onesigma.worker worker -l info",
+      "group": "none",
+      "problemMatcher": []
+    },
+    {
+      "label": "Activate Poetry Shell",
+      "type": "shell",
+      "command": "poetry shell",
+      "group": "none",
+      "problemMatcher": []
+    }
+  ]
+}
